@@ -1,5 +1,6 @@
 import requests
 import os
+import json
 from os.path import join, dirname
 from dotenv import load_dotenv
 
@@ -11,4 +12,4 @@ url = "https://api.spoonacular.com/recipes/search?diet=gluten%20free&apiKey={}".
 
 response = requests.get(url)
 json_body = response.json()
-print(type(json_body))
+print(json.dumps(json_body))
